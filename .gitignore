@@ -1,6 +1,6 @@
 # Prerequisites
 *.d
-
+.vscode
 # Object files
 *.o
 *.ko
@@ -11,7 +11,7 @@
 *.ilk
 *.map
 *.exp
-
+gnl/
 # Precompiled Headers
 *.gch
 *.pch
