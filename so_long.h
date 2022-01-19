@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/19 03:46:25 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/19 01:34:08 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,15 @@
 
 #include "libs/gnl/get_next_line.h"
 #include "libs/libft/libft.h"
-#include "mlx.h"
+#include "libs/mlx/mlx.h"
+
+# ifndef CLOSE_WIN_EVENT
+#  define CLOSE_WIN_EVENT 17
+# endif
+
+# ifndef KEY_EVENT
+#  define KEY_EVENT 2
+# endif
 
 # ifndef ESC_KEY
 #  define ESC_KEY 65307
@@ -41,7 +49,7 @@
 # endif
 
 # ifndef D_KEY
-#  define D_KEY 100
+# define D_KEY 100
 # endif
 
 typedef struct	s_img
@@ -57,15 +65,23 @@ typedef struct	s_img
 	int		y;
 } t_img;
 
+typedef struct	s_map
+{
+	char	**mtx;
+	int		x;
+	int		y;
+} t_map;
+
 typedef struct	s_game
 {
 	void	*mlx;
 	void	*win;
 	t_img	img;
+	t_map	map;
 } t_game;
 
+t_map	ft_get_map(char *map_path);
 t_img	ft_new_sprite(void *mlx, char *sprite);
 int		key_handler(int keycode, void *game);
 int		ft_close(void);
-
 #endif

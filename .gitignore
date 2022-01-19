@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
 .vscode
+Makefile.gen
 # Object files
 *.o
 *.ko
