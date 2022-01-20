@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/19 01:34:08 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/20 05:57:14 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,9 @@ typedef struct	s_game
 {
 	void	*mlx;
 	void	*win;
-	t_img	img;
+	t_img	hero;
+	t_img	grass;
+	t_img	wall;
 	t_map	map;
 } t_game;
 
@@ -84,4 +86,5 @@ t_map	ft_get_map(char *map_path);
 t_img	ft_new_sprite(void *mlx, char *sprite);
 int		key_handler(int keycode, void *game);
 int		ft_close(void);
+void	ft_put_map(t_game *_game);
 #endif

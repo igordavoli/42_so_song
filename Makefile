@@ -15,7 +15,8 @@ MLX_FLAGS = -lXext -lX11
 SRC = src/ft_new_sprite.c \
  src/ft_key_handler.c \
  src/ft_close.c \
- src/ft_get_map.c
+ src/ft_get_map.c \
+ src/ft_put_map.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -32,7 +33,7 @@ $(NAME): main.c $(OBJ)
 
 play: all
 	./$(NAME)
-	make clean
+	# make clean
 
 clean:
 	find -name '*.o' -delete
