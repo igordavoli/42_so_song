@@ -15,6 +15,7 @@ MLX_FLAGS = -lXext -lX11
 SRC = src/ft_new_sprite.c \
  src/ft_key_handler.c \
  src/ft_close.c \
+ src/ft_close_error.c \
  src/ft_get_map.c \
  src/ft_put_map.c \
  src/ft_check_args.c

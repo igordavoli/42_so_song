@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:03:23 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/20 07:03:33 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/20 07:29:55 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	ft_check_args(int argc, char **argv)
 {
 	if (argc < 2)
-		ft_close("ERROR: none map was provided");
+		ft_close_error("ERROR: none map was provided");
 	if (argc > 2)
-		ft_close("ERROR: so much arguments");
-	printf("map: %s \n", argv[1]);
+		ft_close_error("ERROR: so much arguments");
+	printf("map: %s\n", argv[1]);
 }
