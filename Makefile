@@ -16,14 +16,14 @@ SRC = src/ft_new_sprite.c \
  src/ft_key_handler.c \
  src/ft_close.c \
  src/ft_get_map.c \
- src/ft_put_map.c
+ src/ft_put_map.c \
+ src/ft_check_args.c
 
 OBJ = $(SRC:.c=.o)
 
 # OBJ_B = $(SRC:.c=.o)
 
 all: $(NAME)
-
 
 $(NAME): main.c $(OBJ)
 	make -C ./libs/gnl
@@ -32,7 +32,7 @@ $(NAME): main.c $(OBJ)
 	@$(CC) $(CFLAGS) main.c $(OBJ) $(GNL) $(LIBFT) $(MLX) -o $(NAME) $(MLX_FLAGS)
 
 play: all
-	./$(NAME)
+	./$(NAME) maps/map.ber
 	# make clean
 
 clean:
