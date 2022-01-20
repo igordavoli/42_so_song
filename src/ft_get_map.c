@@ -6,13 +6,13 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 01:31:16 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/19 01:33:42 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/20 06:26:49 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static int count_map_lines(char *map_path)
+static int	count_map_lines(char *map_path)
 {
 	int		map_fd;
 	char	*tmp;
@@ -21,10 +21,10 @@ static int count_map_lines(char *map_path)
 	map_fd = open(map_path, O_RDONLY);
 	// validate map_fd
 	i = 0;
-	while(1)
+	while (1)
 	{
 		tmp = get_next_line(map_fd);
-		if(!tmp)
+		if (!tmp)
 			break ;
 		free(tmp);
 		i++;
@@ -33,7 +33,7 @@ static int count_map_lines(char *map_path)
 	return (i);
 }
 
-static char **load_map(int n_lines, char *map_path)
+static char	**load_map(int n_lines, char *map_path)
 {
 	char	**map;
 	int		i;
@@ -44,7 +44,7 @@ static char **load_map(int n_lines, char *map_path)
 	map_fd = open(map_path, O_RDONLY);
 	// validate map_fd
 	i = 0;
-	while(1)
+	while (1)
 	{
 		map[i] = get_next_line(map_fd);
 		if (!map[i++])
@@ -53,13 +53,13 @@ static char **load_map(int n_lines, char *map_path)
 	return (map);
 }
 
-t_map ft_get_map(char *map_path)
+t_map	ft_get_map(char *map_path)
 {
 	t_map	map;
 
 	map.y = count_map_lines(map_path);
 	map.mtx = load_map(map.y, map_path);
 	map.x = ft_strlen(*map.mtx) - 1;
-    //validate map lines size;
+	//validate map lines size;
 	return (map);
 }
