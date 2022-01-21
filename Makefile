@@ -12,7 +12,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 MLX_FLAGS = -lXext -lX11
 
-SRC = src/ft_new_sprite.c \
+SRC = src/ft_get_sprites.c \
  src/ft_key_handler.c \
  src/ft_close.c \
  src/ft_close_error.c \
@@ -30,11 +30,11 @@ $(NAME): main.c $(OBJ)
 	make -C ./libs/gnl
 	make -C ./libs/libft
 	make -C ./libs/mlx
-	@$(CC) $(CFLAGS) main.c $(OBJ) $(GNL) $(LIBFT) $(MLX) -o $(NAME) $(MLX_FLAGS)
+	@$(CC) $(CFLAGS) -fsanitize=address main.c $(OBJ) $(GNL) $(LIBFT) $(MLX) -o $(NAME) $(MLX_FLAGS)
 
 play: all
 	./$(NAME) maps/map.ber
-	# make clean
+	make fclean
 
 clean:
 	find -name '*.o' -delete

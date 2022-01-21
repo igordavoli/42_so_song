@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/20 07:27:46 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/20 23:58:37 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,16 @@ typedef struct s_game
 	t_img	hero;
 	t_img	grass;
 	t_img	wall;
+	t_img	coin;
 	t_map	map;
 }	t_game;
 
 t_map	ft_get_map(char *map_path);
-t_img	ft_new_sprite(void *mlx, char *sprite);
 int		key_handler(int keycode, void *game);
 int		ft_close(void);
 int		ft_close_error(char *message);
 void	ft_put_map(t_game *_game);
 void	ft_check_args(int argc, char **argv);
+void	ft_get_sprites(t_game *game);
 
 #endif
