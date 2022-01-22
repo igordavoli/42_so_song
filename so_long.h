@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/20 23:58:37 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/22 15:41:05 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ typedef struct s_img
 typedef struct s_map
 {
 	char	**mtx;
+	int     coins;
 	int		x;
 	int		y;
 }	t_map;
@@ -76,6 +77,8 @@ typedef struct s_game
 {
 	void	*mlx;
 	void	*win;
+	int		coins_col;
+	int		moves;
 	t_img	hero;
 	t_img	grass;
 	t_img	wall;
@@ -90,5 +93,7 @@ int		ft_close_error(char *message);
 void	ft_put_map(t_game *_game);
 void	ft_check_args(int argc, char **argv);
 void	ft_get_sprites(t_game *game);
+void	ft_check_map(t_map map);
+void	ft_load_map(t_map *map, char *map_path);
 
 #endif
