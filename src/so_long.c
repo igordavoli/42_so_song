@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:15:00 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/20 23:54:02 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/22 15:54:21 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 // int ft_update(void *_game)
 // {
@@ -26,6 +26,7 @@ int main(int argc, char **argv)
 
 	ft_check_args(argc, argv);
 	game.map = ft_get_map(argv[1]);
+    game.moves = 0;
 	game.mlx = mlx_init();
 	ft_get_sprites(&game);
 	game.win = mlx_new_window(game.mlx, game.map.x * game.hero.width, game.map.y * game.hero.height, "so_long");
