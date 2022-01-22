@@ -12,13 +12,16 @@ CFLAGS = -Wall -Wextra -Werror
 
 MLX_FLAGS = -lXext -lX11
 
-SRC = src/ft_get_sprites.c \
- src/ft_key_handler.c \
- src/ft_close.c \
- src/ft_close_error.c \
- src/ft_get_map.c \
- src/ft_put_map.c \
- src/ft_check_args.c
+SRC = src/so_long.c \
+src/ft_get_sprites.c \
+src/ft_key_handler.c \
+src/ft_close.c \
+src/ft_close_error.c \
+src/utils/ft_load_map.c \
+src/utils/ft_check_map.c \
+src/ft_get_map.c \
+src/ft_put_map.c \
+src/ft_check_args.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -26,11 +29,11 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): main.c $(OBJ)
+$(NAME): $(OBJ)
 	make -C ./libs/gnl
 	make -C ./libs/libft
 	make -C ./libs/mlx
-	@$(CC) $(CFLAGS) -fsanitize=address main.c $(OBJ) $(GNL) $(LIBFT) $(MLX) -o $(NAME) $(MLX_FLAGS)
+	@$(CC) $(CFLAGS) -fsanitize=address $(OBJ) $(GNL) $(LIBFT) $(MLX) -o $(NAME) $(MLX_FLAGS)
 
 play: all
 	./$(NAME) maps/map.ber
