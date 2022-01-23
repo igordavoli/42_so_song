@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 15:36:21 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/22 15:39:30 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 01:55:37 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 static void	check_items(int coins, int exits, int start)
 {
 	if (!coins)
-		ft_close_error("not coins found!");
+		ft_close_message("not coins found!", 1);
 	if (!exits)
-		ft_close_error("not exits found!");
+		ft_close_message("not exits found!", 1);
 	if (!start)
-		ft_close_error("not coins found!");
+		ft_close_message("not coins found!", 1);
 }
 
-static void	check_map_items(t_map *map)
+static void	check_map_items(t_game *game)
 {
 	int	i;
 	int	j;
@@ -31,50 +31,51 @@ static void	check_map_items(t_map *map)
 
 	exits = 0;
 	start = 0;
+	game->map_coins = 0;
 	i = 0;
-	while (map->mtx[i])
+	while (game->map[i])
 	{
 		j = 0;
-		while (map->mtx[i][j])
+		while (game->map[i][j])
 		{
-			if (map->mtx[i][j] == 'C')
-				map->coins++;
-			if (map->mtx[i][j] == 'E')
+			if (game->map[i][j] == 'C')
+				game->map_coins++;
+			if (game->map[i][j] == 'E')
 				exits++;
-			if (map->mtx[i][j] == 'P')
+			if (game->map[i][j] == 'P')
 				start++;
 			j++;
 		}
 		i++;
 	}
-	check_items(map->coins, exits, start);
+	check_items(game->map_coins, exits, start);
 }
 
-static void	check_map_walls(t_map map)
+static void	check_map_walls(t_game *game)
 {
 	int	i;
 
 	i = 0;
-	while (map.mtx[0][i])
-		if (map.mtx[0][i++] != '1')
-			ft_close_error("map do not have north wall complete!");
+	while (game->map[0][i])
+		if (game->map[0][i++] != '1')
+			ft_close_message("map do not have north wall complete!", 1);
 	i = 0;
-	while (map.mtx[map.y - 1][i])
-		if (map.mtx[map.y - 1][i++] != '1')
-			ft_close_error("map do not have south wall complete!");
+	while (game->map[game->map_height - 1][i])
+		if (game->map[game->map_height - 1][i++] != '1')
+			ft_close_message("map do not have south wall complete!", 1);
 	i = 0;
-	while (map.mtx[i])
-		if (map.mtx[i++][0] != '1')
-			ft_close_error("map do not have west wall complete!");
+	while (game->map[i])
+		if (game->map[i++][0] != '1')
+			ft_close_message("map do not have west wall complete!", 1);
 	i = 0;
-	while (map.mtx[i])
-		if (map.mtx[i++][map.x - 1] != '1')
-			ft_close_error("map do not have east wall complete!");
+	while (game->map[i])
+		if (game->map[i++][game->map_width- 1] != '1')
+			ft_close_message("map do not have east wall complete!", 1);
 }
 
-void	ft_check_map(t_map map)
+void	ft_check_map(t_game *game)
 {
-	check_map_walls(map);
-	check_map_items(&map);
+	check_map_walls(game);
+	check_map_items(game);
 	//validate map lines size;
 }

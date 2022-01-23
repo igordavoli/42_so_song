@@ -6,18 +6,15 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 01:31:16 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/22 15:40:16 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 01:59:46 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-t_map	ft_get_map(char *map_path)
+void	ft_get_map(t_game *game, char *map_path)
 {
-	t_map	map;
-
-	map.coins = 0;
-	ft_load_map(&map, map_path);
-	ft_check_map(map);
-	return (map);
+	game->map = (char **)malloc(sizeof(char **));
+	ft_load_map(game, map_path);
+	ft_check_map(game);
 }

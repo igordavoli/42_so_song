@@ -6,26 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:33:56 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/22 15:10:01 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 00:16:49 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
-static void	ft_move_hero(int x, int y, t_game *game)
-{
-	if (game->map.mtx[game->hero.y + y][game->hero.x + x] != '1')
-	{
-		if (game->map.mtx[game->hero.y + y][game->hero.x + x] == 'C')
-			game->coins_col++;
-		mlx_put_image_to_window(game->mlx, game->win, game->grass.ref, game->hero.x * game->grass.width, game->hero.y * game->grass.height);
-		game->hero.x = game->hero.x + x;
-		game->hero.y = game->hero.y + y;
-		mlx_put_image_to_window(game->mlx, game->win, game->hero.ref, game->hero.x * game->hero.width, game->hero.y * game->hero.height);
-		game->moves++;
-		printf("coins: %d moves: %d\n",game->coins_col, game->moves);
-	}
-}
 
 int	key_handler(int keycode, void *_game)
 {
@@ -33,14 +18,14 @@ int	key_handler(int keycode, void *_game)
 
 	game = (t_game *)_game;
 	if (keycode == ESC_KEY)
-		ft_close();
+		ft_close_message("close by user", 0);
 	if (keycode == W_KEY)
-		ft_move_hero(0, -1, game);
+		ft_move_hero(game, 0, -1);
 	if (keycode == A_KEY)
-		ft_move_hero(-1, 0, game);
+		ft_move_hero(game, -1, 0);
 	if (keycode == S_KEY)
-		ft_move_hero(0, 1, game);
+		ft_move_hero(game, 0, 1 );
 	if (keycode == D_KEY)
-		ft_move_hero(1, 0, game);
+		ft_move_hero(game, 1, 0);
 	return (0);
 }

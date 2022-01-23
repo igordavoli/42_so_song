@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:15:00 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/22 15:54:21 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 01:49:24 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ int main(int argc, char **argv)
 	t_game	game;
 
 	ft_check_args(argc, argv);
-	game.map = ft_get_map(argv[1]);
-    game.moves = 0;
+	ft_get_map(&game, argv[1]);
+	game.moves = 0;
+	game.hero_coins = 0;
 	game.mlx = mlx_init();
 	ft_get_sprites(&game);
-	game.win = mlx_new_window(game.mlx, game.map.x * game.hero.width, game.map.y * game.hero.height, "so_long");
+	game.win = mlx_new_window(game.mlx, game.map_width * game.img_width, game.map_height * game.img_height, "so_long");
 	ft_put_map(&game);
 	mlx_hook(game.win, CLOSE_WIN_EVENT, 1, &ft_close, &game);
 	mlx_hook(game.win, KEY_EVENT, 1, &key_handler, &game);

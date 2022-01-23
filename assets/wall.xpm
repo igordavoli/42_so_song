@@ -8,7 +8,7 @@ static char *result[] = {
 "o c #A3A7C2",
 "O c #C8D45D",
 /* pixels */
-"OOOOOXXXXXXOOOO",
+"OOOOOXXXXXXOOOOO",
 "OOO0XooooooX0OOO",
 "OO0XooooooooX0OO",
 "O0XooooooooooX0O",

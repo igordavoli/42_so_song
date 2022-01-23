@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 15:26:08 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/22 15:36:49 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 01:46:12 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,23 @@ static int	ft_count_map_lines(char *map_path)
 	return (i);
 }
 
-void	ft_load_map(t_map *map, char *map_path)
+void	ft_load_map(t_game *game, char *map_path)
 {
 	int		i;
 	int		map_fd;
 
-	map->y = ft_count_map_lines(map_path);
-	map->mtx = (char **)malloc(sizeof(char *) * map->y + 1);
+	game->map_height = ft_count_map_lines(map_path);
+	game->map = (char **)malloc(sizeof(char *) * game->map_height + 1);
 	// validate map
 	map_fd = open(map_path, O_RDONLY);
 	// validate map_fd
 	i = 0;
 	while (1)
 	{
-		map->mtx[i] = get_next_line(map_fd);
-		if (!map->mtx[i++])
+		game->map[i] = get_next_line(map_fd);
+		if (!game->map[i++])
 			break ;
 	}
-		map->x = ft_strlen(map->mtx[0]);
+		game->map_width = ft_strlen(game->map[0]);
 }
 

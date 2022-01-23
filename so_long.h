@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/22 15:41:05 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 01:59:28 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,48 +52,44 @@
 #  define D_KEY 100
 # endif
 
-typedef struct s_img
-{
-	void	*ref;
-	char	*pixels;
-	int		width;
-	int		height;
-	int		bits;
-	int		line;
-	int		end;
-	int		x;
-	int		y;
-}	t_img;
+# ifndef RES
+#  define RES 16
+# endif
 
 typedef struct s_map
 {
-	char	**mtx;
-	int     coins;
-	int		x;
-	int		y;
+
 }	t_map;
 
 typedef struct s_game
 {
 	void	*mlx;
 	void	*win;
-	int		coins_col;
+	int		hero_coins;
+	int		hero_x;
+	int		hero_y;
 	int		moves;
-	t_img	hero;
-	t_img	grass;
-	t_img	wall;
-	t_img	coin;
-	t_map	map;
+	int		img_width;
+	int		img_height;
+	void	*hero;
+	void	*grass;
+	void	*wall;
+	void	*coin;
+	char	**map;
+	int		map_coins;
+	int		map_width;
+	int		map_height;
 }	t_game;
 
-t_map	ft_get_map(char *map_path);
+void	ft_get_map(t_game *game, char *map_path);
+void	ft_load_map(t_game *game, char *map_path);
+void	ft_check_map(t_game *game);
 int		key_handler(int keycode, void *game);
-int		ft_close(void);
-int		ft_close_error(char *message);
+int		ft_close(void *_game);
+int		ft_close_message(char *message, int code);
+int		ft_move_hero(t_game *game, int x, int y);
 void	ft_put_map(t_game *_game);
 void	ft_check_args(int argc, char **argv);
 void	ft_get_sprites(t_game *game);
-void	ft_check_map(t_map map);
-void	ft_load_map(t_map *map, char *map_path);
 
 #endif
