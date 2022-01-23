@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:33:56 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 00:16:49 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 02:39:04 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	key_handler(int keycode, void *_game)
 
 	game = (t_game *)_game;
 	if (keycode == ESC_KEY)
-		ft_close_message("close by user", 0);
+		ft_close_message(game, "close by user", 0);
 	if (keycode == W_KEY)
 		ft_move_hero(game, 0, -1);
 	if (keycode == A_KEY)

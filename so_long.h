@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 02:19:03 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 02:46:47 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,10 @@ void	ft_load_map(t_game *game, char *map_path);
 void	ft_check_map(t_game *game);
 int		key_handler(int keycode, void *game);
 int		ft_close(void *_game);
-int		ft_close_message(char *message, int code);
+void	ft_close_message(t_game *game, char *message, int code);
 int		ft_move_hero(t_game *game, int x, int y);
 void	ft_put_map(t_game *_game);
-void	ft_check_args(int argc, char **argv);
+void	ft_check_args(t_game *game, int argc, char **argv);
 void	ft_get_sprites(t_game *game);
 
 #endif

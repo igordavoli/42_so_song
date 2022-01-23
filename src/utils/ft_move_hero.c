@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 00:00:20 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 01:42:45 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 02:42:11 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_move_hero(t_game *game, int x, int y)
 		return (0);
 	if ((game->map[game->hero_y + y][game->hero_x + x] == 'E')
 		&& (game->hero_coins == game->map_coins))
-		ft_close_message("You win!", 0);
+		ft_close_message(game, "You win!", 0);
 	if (game->map[game->hero_y + y][game->hero_x + x] == 'C')
 		game->hero_coins++;
 	printf("%d\n", ++game->moves);
