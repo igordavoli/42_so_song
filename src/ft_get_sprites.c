@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 23:54:22 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 01:29:56 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 02:18:47 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	ft_get_sprites(t_game *game)
 	game->grass = ft_get_sprite(game, "assets/grass.xpm");
 	game->wall = ft_get_sprite(game, "assets/wall.xpm");
 	game->coin = ft_get_sprite(game, "assets/coin.xpm");
+	game->exit = ft_get_sprite(game, "assets/exit.xpm");
 }

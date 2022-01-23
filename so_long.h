@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 01:59:28 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 02:19:03 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ typedef struct s_game
 	void	*grass;
 	void	*wall;
 	void	*coin;
+	void	*exit;
 	char	**map;
 	int		map_coins;
 	int		map_width;

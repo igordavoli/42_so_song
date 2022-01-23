@@ -6,25 +6,34 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:36:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 01:43:45 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 02:10:04 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
+void	ft_free_ptr(void **ptr)
+{
+	if (*ptr)
+	{
+		free(*ptr);
+		*ptr = NULL;
+	}
+}
 
 void	ft_free_map(char **map)
 {
 	int	i;
 
+	if (!map)
+		return ;
 	i = 0;
-
-	while(map[i])
+	while (map[i])
 	{
-		free(map[i]);
+		ft_free_ptr((void *)&map[i]);
 		i++;
 	}
-	free(map);
+	ft_free_ptr((void *)&map);
 }
 
 int	ft_close(void *_game)
