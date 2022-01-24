@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 00:00:20 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 02:42:11 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 19:58:03 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 static void	ft_exec_move(t_game *game, int x, int y)
 {
 	mlx_put_image_to_window(game->mlx, game->win, game->grass,
-		game->hero_x * game->img_width, game->hero_y * game->img_height);
+		game->hero_x * RES, game->hero_y * RES);
 	game->hero_x = game->hero_x + x;
 	game->hero_y = game->hero_y + y;
 	mlx_put_image_to_window(game->mlx, game->win, game->hero,
-		game->hero_x * game->img_width, game->hero_y * game->img_height);
+		game->hero_x * RES, game->hero_y * RES);
 }
 
 int	ft_move_hero(t_game *game, int x, int y)

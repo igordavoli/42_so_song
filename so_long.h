@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 02:46:47 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 23:31:18 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,43 +23,7 @@
 # include "libs/gnl/get_next_line.h"
 # include "libs/libft/libft.h"
 # include "libs/mlx/mlx.h"
-
-# ifndef CLOSE_WIN_EVENT
-#  define CLOSE_WIN_EVENT 17
-# endif
-
-# ifndef KEY_EVENT
-#  define KEY_EVENT 2
-# endif
-
-# ifndef ESC_KEY
-#  define ESC_KEY 65307
-# endif
-
-# ifndef W_KEY
-#  define W_KEY 119
-# endif
-
-# ifndef A_KEY
-#  define A_KEY 97
-# endif
-
-# ifndef S_KEY
-#  define S_KEY 115
-# endif
-
-# ifndef D_KEY
-#  define D_KEY 100
-# endif
-
-# ifndef RES
-#  define RES 16
-# endif
-
-typedef struct s_map
-{
-
-}	t_map;
+# include "so_long_macros.h"
 
 typedef struct s_game
 {
@@ -82,15 +46,19 @@ typedef struct s_game
 	int		map_height;
 }	t_game;
 
+void	ft_check_args(int argc, char **argv);
 void	ft_get_map(t_game *game, char *map_path);
 void	ft_load_map(t_game *game, char *map_path);
 void	ft_check_map(t_game *game);
-int		key_handler(int keycode, void *game);
-int		ft_close(void *_game);
-void	ft_close_message(t_game *game, char *message, int code);
-int		ft_move_hero(t_game *game, int x, int y);
-void	ft_put_map(t_game *_game);
-void	ft_check_args(t_game *game, int argc, char **argv);
+void	ft_check_map_items(t_game *game);
+void	ft_check_map_walls(t_game *game);
+void	ft_check_map_lines(t_game *game);
+void	ft_check_map_chars(t_game *game);
 void	ft_get_sprites(t_game *game);
+void	ft_put_map(t_game *_game);
+int		key_handler(int keycode, void *game);
+int		ft_move_hero(t_game *game, int x, int y);
+void	ft_close_message(t_game *game, char *message, int code);
+int		ft_close(void *_game);
 
 #endif

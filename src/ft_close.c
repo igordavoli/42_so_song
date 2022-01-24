@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:36:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 13:21:42 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 18:42:58 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ int	ft_close(void *_game)
 	mlx_destroy_image(game->mlx, game->exit);
 	mlx_destroy_window(game->mlx, game->win);
 	mlx_destroy_display(game->mlx);
+	free(game->mlx);
 	exit(0);
 }

@@ -6,17 +6,27 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:03:23 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 13:13:28 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 20:24:54 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	ft_check_args(t_game *game, int argc, char **argv)
+void	ft_check_args(int argc, char **argv)
 {
+	int	test_fd;
+
 	if (argc < 2)
-		ft_close_message(game, "none map was provided", 1);
+		exit(1);
 	if (argc > 2)
-		ft_close_message(game, "so much arguments", 1);
-	printf("map: %s\n", argv[1]);
+		exit(1);
+
+	test_fd = open(argv[1], O_RDONLY);
+	if(test_fd == -1)
+	{
+		printf("can not open file");
+		close(test_fd);
+		exit(1);
+	}
+	close(test_fd);
 }

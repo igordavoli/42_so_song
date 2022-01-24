@@ -8,7 +8,7 @@ NAME = so_long.out
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g3 -Wall -Wextra -Werror
 
 MLX_FLAGS = -lXext -lX11
 
@@ -19,6 +19,7 @@ src/ft_key_handler.c \
 src/ft_close.c \
 src/ft_close_message.c \
 src/utils/ft_load_map.c \
+src/utils/check_map_utils.c \
 src/utils/ft_check_map.c \
 src/ft_get_map.c \
 src/ft_put_map.c \
