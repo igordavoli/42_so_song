@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 23:54:22 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 19:58:56 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 23:41:58 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static void	*ft_get_sprite(t_game *game, char *sprite)
 {
-	return mlx_xpm_file_to_image(game->mlx, sprite, &game->img_width, &game->img_height);
+	return (mlx_xpm_file_to_image(game->mlx, sprite, &game->img_width,
+			&game->img_height));
 }
 
 void	ft_get_sprites(t_game *game)

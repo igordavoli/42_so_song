@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:33:56 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 02:39:04 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 23:45:59 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	key_handler(int keycode, void *_game)
 	if (keycode == A_KEY)
 		ft_move_hero(game, -1, 0);
 	if (keycode == S_KEY)
-		ft_move_hero(game, 0, 1 );
+		ft_move_hero(game, 0, 1);
 	if (keycode == D_KEY)
 		ft_move_hero(game, 1, 0);
 	return (0);

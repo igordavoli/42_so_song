@@ -6,12 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 00:00:20 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 19:58:03 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 23:47:47 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
-
 
 static void	ft_exec_move(t_game *game, int x, int y)
 {

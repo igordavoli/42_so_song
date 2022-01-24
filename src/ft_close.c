@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:36:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 18:42:58 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 23:40:13 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_free_map(char **map)
 
 int	ft_close(void *_game)
 {
-	t_game  *game;
+	t_game	*game;
 
 	game = (t_game *)_game;
 	ft_free_map(game->map);

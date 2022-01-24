@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:18:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 23:24:10 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/23 23:50:20 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,19 @@ void	ft_check_map_walls(t_game *game)
 			ft_close_message(game, "map do not have east wall complete!", 1);
 }
 
-void ft_check_map_lines(t_game *game)
+void	ft_check_map_lines(t_game *game)
 {
 	int	i;
 
 	i = 0;
 	while (game->map[i])
 	{
-		if((int)ft_strlen(game->map[i++]) != game->map_width)
+		if ((int)ft_strlen(game->map[i++]) != game->map_width)
 			ft_close_message(game, "map is not a retangle", 1);
 	}
 }
 
-void ft_check_map_chars(t_game *game)
+void	ft_check_map_chars(t_game *game)
 {
 	int	i;
 	int	j;
