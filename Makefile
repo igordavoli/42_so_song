@@ -39,7 +39,6 @@ $(NAME): $(OBJ)
 
 play: all
 	./$(NAME) maps/map.ber
-	make fclean
 
 clean:
 	find -name '*.o' -delete

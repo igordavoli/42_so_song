@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 23:54:22 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 23:41:58 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/25 15:32:44 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static void	*ft_get_sprite(t_game *game, char *sprite)
 
 void	ft_get_sprites(t_game *game)
 {
-	game->hero = ft_get_sprite(game, "assets/p_front.xpm");
-	game->grass = ft_get_sprite(game, "assets/grass.xpm");
-	game->wall = ft_get_sprite(game, "assets/wall.xpm");
-	game->coin = ft_get_sprite(game, "assets/coin.xpm");
-	game->exit = ft_get_sprite(game, "assets/exit.xpm");
+	game->hero = ft_get_sprite(game, H_FRONT_XPM);
+	game->grass = ft_get_sprite(game, GRASS_XPM);
+	game->wall = ft_get_sprite(game, WALL_XPM);
+	game->coin = ft_get_sprite(game, COIN_XPM);
+	game->exit = ft_get_sprite(game, EXIT_XPM);
 }
