@@ -6,13 +6,13 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:28:55 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/25 15:33:10 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/26 21:21:42 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef SO_LONG_MACROS_H
 # define SO_LONG_MACROS_H
+
 
 # ifndef H_FRONT_XPM
 #  define H_FRONT_XPM "assets/h_front.xpm"
@@ -35,7 +35,7 @@
 # endif
 
 # ifndef COIN_XPM
-#  define COIN_XPM "assets/coin.xpm"
+#  define COIN_XPM "assets/coin_new.xpm"
 # endif
 
 # ifndef WALL_XPM
@@ -77,4 +77,5 @@
 # ifndef RES
 #  define RES 32
 # endif
+
 #endif

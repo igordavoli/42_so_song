@@ -6,32 +6,27 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:18:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 23:50:20 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/26 22:44:56 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-static void	ft_check_items(t_game *game, int exits, int start)
+static void	ft_check_items(t_game *game)
 {
 	if (!game->map_coins)
 		ft_close_message(game, "not coins found!", 1);
-	if (!exits)
+	if (!game->map_exits)
 		ft_close_message(game, "not exits found!", 1);
-	if (!start)
-		ft_close_message(game, "not start found!", 1);
+	if (game->map_start != 1)
+		ft_close_message(game, "must exist just a map exit!", 1);
 }
 
 void	ft_check_map_items(t_game *game)
 {
 	int	i;
 	int	j;
-	int	exits;
-	int	start;
 
-	exits = 0;
-	start = 0;
-	game->map_coins = 0;
 	i = 0;
 	while (game->map[i])
 	{
@@ -41,14 +36,16 @@ void	ft_check_map_items(t_game *game)
 			if (game->map[i][j] == 'C')
 				game->map_coins++;
 			if (game->map[i][j] == 'E')
-				exits++;
+				game->map_exits++;
 			if (game->map[i][j] == 'P')
-				start++;
+				game->map_start++;
+			if (game->map[i][j] == 'A')
+				game->n_capys++;
 			j++;
 		}
 		i++;
 	}
-	ft_check_items(game, exits, start);
+	ft_check_items(game);
 }
 
 void	ft_check_map_walls(t_game *game)
@@ -99,7 +96,7 @@ void	ft_check_map_chars(t_game *game)
 		{
 			if (game->map[i][j] != '1' && game->map[i][j] != '0'
 				&& game->map[i][j] != 'C' && game->map[i][j] != 'E'
-					&& game->map[i][j] != 'P')
+					&& game->map[i][j] != 'P' && game->map[i][j] != 'A')
 				ft_close_message(game, "Invalid character in map", 1);
 			j++;
 		}

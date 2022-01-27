@@ -38,6 +38,7 @@ $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) $(GNL) $(LIBFT) $(MLX) -o $(NAME) $(MLX_FLAGS)
 
 play: all
+	make re
 	./$(NAME) maps/map.ber
 
 clean:
