@@ -38,7 +38,7 @@ $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) $(GNL) $(LIBFT) $(MLX) -o $(NAME) $(MLX_FLAGS)
 
 play: all
-	make re
+	./install_libs.sh
 	./$(NAME) maps/map.ber
 
 clean:
@@ -50,3 +50,8 @@ fclean:
 
 re:
 	@make fclean && make all
+
+install:
+	apt install x11-apps
+	apt install libxext-dev
+	apt install libbsd-dev
