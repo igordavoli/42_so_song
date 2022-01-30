@@ -38,7 +38,6 @@ $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) $(GNL) $(LIBFT) $(MLX) -o $(NAME) $(MLX_FLAGS)
 
 play: all
-	./install_libs.sh
 	./$(NAME) maps/map.ber
 
 clean:

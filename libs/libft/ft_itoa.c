@@ -6,13 +6,13 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 16:03:15 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/11 23:49:39 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 02:33:51 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_size(int n)
+int	ft_get_nbr_size(int n)
 {
 	int	i;
 
@@ -36,7 +36,7 @@ char	*ft_itoa(int n)
 	char	*str;
 	int		size;
 
-	size = get_size(n);
+	size = ft_get_nbr_size(n);
 	str = (char *)malloc(size);
 	str[--size] = '\0';
 	if (n == -2147483648)

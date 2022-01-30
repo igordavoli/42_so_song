@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 05:44:16 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/27 01:01:31 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 03:13:38 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static void	ft_put_capy(t_game *game, int x, int y)
 	game->capys[game->n_capys] = (t_capy *)malloc(sizeof(t_capy));
 	game->capys[game->n_capys]->x = x;
 	game->capys[game->n_capys]->y = y;
-	printf("capy\n");
 }
 
 void	ft_put_sprite(t_game *game, char c, int x, int y)

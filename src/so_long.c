@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:15:00 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/27 01:02:57 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 03:18:46 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,15 @@ void	game_init(t_game *game, char *map_arg)
 	game->map = NULL;
 	game->moves = 0;
 	game->hero_coins = 0;
-	game->map_coins = 0;
+	game->map_c = 0;
 	game->n_capys = 0;
 	game->map_exits = 0;
 	game->map_start = 0;
 	ft_get_map(game, map_arg);
 	game->capys = (t_capy **)malloc(sizeof(t_capy *) * (game->n_capys + 1));
 	game->capys[game->n_capys] = NULL;
-	printf("n_capys: %d\n", game->n_capys);
+	game->numbers = (void **)malloc(sizeof(void *) * 11);
+	game->numbers[10] = NULL;
 	game->mlx = mlx_init();
 	ft_get_sprites(game);
 	game->win = mlx_new_window(game->mlx, game->map_width * RES,

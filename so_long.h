@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/26 23:15:19 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 03:16:02 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,14 @@ typedef struct s_game
 	void	*coin;
 	void	*exit;
 	char	**map;
-	int		map_coins;
+	int		map_c;
 	int		map_width;
 	int		map_height;
 	int		map_exits;
 	int		map_start;
 	int		n_capys;
 	t_capy	**capys;
+	void	**numbers;
 }	t_game;
 
 void	ft_check_args(int argc, char **argv);

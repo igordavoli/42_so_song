@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:36:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/27 00:59:23 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 03:28:17 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,43 +21,29 @@ void	ft_free_ptr(void **ptr)
 	}
 }
 
-void	ft_free_map(char **map)
+void	ft_free_ptr_ptr(void **ptr)
 {
 	int	i;
 
-	if (!map)
+	if (!ptr)
 		return ;
 	i = 0;
-	while (map[i])
+	while (ptr[i])
 	{
-		ft_free_ptr((void *)&map[i]);
+		ft_free_ptr((void *)&ptr[i]);
 		i++;
 	}
-	ft_free_ptr((void *)&map);
+	ft_free_ptr((void *)&ptr);
 }
 
-void	ft_free_capy(t_capy **ptr)
-{
-	if (*ptr)
-	{
-		free(*ptr);
-		*ptr = NULL;
-	}
-}
-
-void	ft_free_capys(t_capy **capys)
+void	ft_destroy_numbers(void *mlx, void **numbers)
 {
 	int	i;
 
-	if (!capys)
-		return ;
 	i = 0;
-	while (capys[i])
-	{
-		ft_free_ptr((void *)&capys[i]);
-		i++;
-	}
-	ft_free_ptr((void *)&capys);
+	while (numbers[i])
+		mlx_destroy_image(mlx, numbers[i++]);
+	free((void *)numbers);
 }
 
 int	ft_close(void *_game)
@@ -65,8 +51,9 @@ int	ft_close(void *_game)
 	t_game	*game;
 
 	game = (t_game *)_game;
-	ft_free_capys(game->capys);
-	ft_free_map(game->map);
+	ft_free_ptr_ptr((void **)game->capys);
+	ft_free_ptr_ptr((void **)game->map);
+	ft_destroy_numbers(game->mlx, game->numbers);
 	mlx_destroy_image(game->mlx, game->capy_lay);
 	mlx_destroy_image(game->mlx, game->capy_front);
 	mlx_destroy_image(game->mlx, game->capy_back);

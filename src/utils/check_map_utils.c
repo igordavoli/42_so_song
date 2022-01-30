@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:18:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/26 22:44:56 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 03:15:09 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_check_items(t_game *game)
 {
-	if (!game->map_coins)
+	if (!game->map_c)
 		ft_close_message(game, "not coins found!", 1);
 	if (!game->map_exits)
 		ft_close_message(game, "not exits found!", 1);
@@ -34,7 +34,7 @@ void	ft_check_map_items(t_game *game)
 		while (game->map[i][j])
 		{
 			if (game->map[i][j] == 'C')
-				game->map_coins++;
+				game->map_c++;
 			if (game->map[i][j] == 'E')
 				game->map_exits++;
 			if (game->map[i][j] == 'P')
@@ -87,7 +87,7 @@ void	ft_check_map_chars(t_game *game)
 	int	i;
 	int	j;
 
-	game->map_coins = 0;
+	game->map_c = 0;
 	i = 0;
 	while (game->map[i])
 	{
