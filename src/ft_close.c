@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:36:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 03:28:17 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 03:35:35 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,9 @@ void	ft_destroy_numbers(void *mlx, void **numbers)
 	free((void *)numbers);
 }
 
-int	ft_close(void *_game)
-{
-	t_game	*game;
 
-	game = (t_game *)_game;
-	ft_free_ptr_ptr((void **)game->capys);
-	ft_free_ptr_ptr((void **)game->map);
+void	ft_destroy_images(t_game *game)
+{
 	ft_destroy_numbers(game->mlx, game->numbers);
 	mlx_destroy_image(game->mlx, game->capy_lay);
 	mlx_destroy_image(game->mlx, game->capy_front);
@@ -67,6 +63,16 @@ int	ft_close(void *_game)
 	mlx_destroy_image(game->mlx, game->grass);
 	mlx_destroy_image(game->mlx, game->wall);
 	mlx_destroy_image(game->mlx, game->exit);
+}
+
+int	ft_close(void *_game)
+{
+	t_game	*game;
+
+	game = (t_game *)_game;
+	ft_free_ptr_ptr((void **)game->capys);
+	ft_free_ptr_ptr((void **)game->map);
+	ft_destroy_images(game);
 	mlx_destroy_window(game->mlx, game->win);
 	mlx_destroy_display(game->mlx);
 	free(game->mlx);

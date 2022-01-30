@@ -54,3 +54,7 @@ install:
 	apt install x11-apps
 	apt install libxext-dev
 	apt install libbsd-dev
+
+val: all
+	make re
+	valgrind --track-origins=yes --leak-check=full -s ./so_long.out maps/map.ber
