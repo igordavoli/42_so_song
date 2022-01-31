@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 21:45:26 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 23:50:22 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@
 # include "../libs/gnl/get_next_line.h"
 # include "../libs/libft/libft.h"
 # include "../libs/mlx/mlx.h"
-# include "so_long_macros.h"
-# include "so_long_macros_bonus.h"
+# include "so_long_defines.h"
+# include "so_long_defines_bonus.h"
 
 typedef struct s_capy
 {
 	int	x;
-	int y;
+	int	y;
 }	t_capy;
 
 typedef struct s_game
@@ -64,6 +64,7 @@ typedef struct s_game
 	int		n_capys;
 	t_capy	**capys;
 	void	**numbers;
+	int		err_code;
 }	t_game;
 
 void	ft_check_args(int argc, char **argv);
@@ -77,7 +78,7 @@ void	ft_check_map_chars(t_game *game);
 void	ft_get_sprites(t_game *game);
 void	ft_put_map(t_game *_game);
 int		key_handler(int keycode, void *game);
-int	ft_move_hero(t_game *game, int x, int y, void *hero_sprite);
+int		ft_move_hero(t_game *game, int x, int y, void *hero_sprite);
 void	ft_close_message(t_game *game, char *message, int code);
 int		ft_close(void *_game);
 

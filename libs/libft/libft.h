@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 11:27:23 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 02:27:30 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 22:49:36 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_get_nbr_size(int n);
+void	ft_free_ptrs(void **ptr);
+void	ft_free_ptr(void **ptr);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:15:00 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 21:43:23 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 23:47:19 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,10 @@ void	game_init(t_game *game, char *map_arg)
 	game->n_capys = 0;
 	game->map_exits = 0;
 	game->map_start = 0;
+	game->img_height = 0;
+	game->img_width = 0;
+	game->map = NULL;
 	ft_get_map(game, map_arg);
-	game->capys = (t_capy **)malloc(sizeof(t_capy *) * (game->n_capys + 1));
-	game->capys[game->n_capys] = NULL;
 	game->mlx = mlx_init();
 	ft_get_sprites(game);
 	game->win = mlx_new_window(game->mlx, game->map_width * RES,

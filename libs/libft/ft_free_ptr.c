@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_map.c                                     :+:      :+:    :+:   */
+/*   ft_free_ptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/22 15:36:21 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/26 22:07:43 by idavoli-         ###   ########.fr       */
+/*   Created: 2022/01/30 22:46:58 by idavoli-          #+#    #+#             */
+/*   Updated: 2022/01/30 22:48:56 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "libft.h"
 
-void	ft_check_map(t_game *game)
+void	ft_free_ptr(void **ptr)
 {
-	ft_check_map_lines(game);
-	ft_check_map_chars(game);
-	ft_check_map_walls(game);
-	ft_check_map_items(game);
+	if (*ptr)
+	{
+		free(*ptr);
+		*ptr = NULL;
+	}
 }

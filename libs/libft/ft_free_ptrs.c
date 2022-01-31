@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_args.c                                    :+:      :+:    :+:   */
+/*   ft_free_ptrs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 07:03:23 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 23:40:46 by idavoli-         ###   ########.fr       */
+/*   Created: 2022/01/30 22:47:36 by idavoli-          #+#    #+#             */
+/*   Updated: 2022/01/30 22:47:56 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	ft_check_args(int argc, char **argv)
+void	ft_free_ptrs(void **ptr)
 {
-	int	test_fd;
+	int	i;
 
-	if (argc < 2)
-		exit(1);
-	if (argc > 2)
-		exit(1);
-	test_fd = open(argv[1], O_RDONLY);
-	if (test_fd == -1)
+	if (!ptr)
+		return ;
+	i = 0;
+	while (ptr[i])
 	{
-		printf("can not open file");
-		close(test_fd);
-		exit(1);
+		ft_free_ptr((void *)&ptr[i]);
+		i++;
 	}
-	close(test_fd);
+	ft_free_ptr((void *)&ptr);
 }

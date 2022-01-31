@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 23:54:22 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 21:43:23 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 23:49:48 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	*ft_get_sprite(t_game *game, char *sprite)
 			&game->img_height));
 }
 
-static void ft_load_nbrs_sprites(t_game *game)
+static void	ft_load_nbrs_sprites(t_game *game)
 {
 	game->numbers = (void **)malloc(sizeof(void *) * 11);
 	game->numbers[10] = NULL;
@@ -34,7 +34,7 @@ static void ft_load_nbrs_sprites(t_game *game)
 	game->numbers[9] = ft_get_sprite(game, NINE_XPM);
 }
 
-static void ft_load_capy_sprites(t_game *game)
+static void	ft_load_capy_sprites(t_game *game)
 {
 	game->capy_lay = ft_get_sprite(game, CAPY_LAY_XPM);
 	game->capy_front = ft_get_sprite(game, CAPY_FRONT_XPM);
@@ -43,7 +43,7 @@ static void ft_load_capy_sprites(t_game *game)
 	game->capy_right = ft_get_sprite(game, CAPY_RIGHT_XPM);
 }
 
-static void ft_load_hero_sprites(t_game *game)
+static void	ft_load_hero_sprites(t_game *game)
 {
 	game->hero_front = ft_get_sprite(game, H_FRONT_XPM);
 	game->hero_back = ft_get_sprite(game, H_BACK_XPM);
