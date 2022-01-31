@@ -6,11 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 05:44:16 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 21:43:23 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 03:13:38 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static void	ft_put_capy(t_game *game, int x, int y)
 {

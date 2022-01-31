@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 03:35:19 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 21:45:26 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 
-# include "libs/gnl/get_next_line.h"
-# include "libs/libft/libft.h"
-# include "libs/mlx/mlx.h"
+# include "../libs/gnl/get_next_line.h"
+# include "../libs/libft/libft.h"
+# include "../libs/mlx/mlx.h"
 # include "so_long_macros.h"
 # include "so_long_macros_bonus.h"
 

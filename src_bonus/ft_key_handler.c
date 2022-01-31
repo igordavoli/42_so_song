@@ -6,11 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:33:56 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 21:43:23 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/26 00:21:38 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	key_handler(int keycode, void *_game)
 {

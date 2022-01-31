@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 23:31:22 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/23 18:22:23 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 18:28:17 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static char	*ft_substr_f(char *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-static char	*extract_line(char *buffer, char **static_buff, ssize_t read_bytes)
+static char	*extract_line(char *buffer, char **static_buff, ssize_t read_bytes, int lf)
 {
 	char		*line;
 	char		*line_end;
@@ -78,7 +78,7 @@ static char	*extract_line(char *buffer, char **static_buff, ssize_t read_bytes)
 	if (line_end)
 	{
 		*static_buff = ft_strdup(line_end + 1);
-		line = ft_substr_f(line, 0, line_end - line);
+		line = ft_substr_f(line, 0, line_end - line + lf);
 		return (line);
 	}
 	else if (read_bytes)
@@ -93,7 +93,7 @@ static char	*extract_line(char *buffer, char **static_buff, ssize_t read_bytes)
 	return (NULL);
 }
 
-static char	*get_line(int fd, char *buffer)
+static char	*get_line(int fd, char *buffer,  int lf)
 {
 	static char	*static_buff;
 	char		*line;
@@ -107,12 +107,12 @@ static char	*get_line(int fd, char *buffer)
 		if (read_bytes == -1)
 			return (NULL);
 		buffer[read_bytes] = '\0';
-		line = extract_line(buffer, &static_buff, read_bytes);
+		line = extract_line(buffer, &static_buff, read_bytes, lf);
 	}
 	return (line);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int lf)
 {
 	char		*buffer;
 	char		*line;
@@ -127,7 +127,7 @@ char	*get_next_line(int fd)
 		free(buffer);
 		return (NULL);
 	}
-	line = get_line(fd, buffer);
+	line = get_line(fd, buffer, lf);
 	free(buffer);
 	return (line);
 }

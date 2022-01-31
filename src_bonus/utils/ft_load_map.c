@@ -6,11 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 15:26:08 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 21:45:56 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 21:36:32 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 static int	ft_count_map_lines(char *map_path)
 {

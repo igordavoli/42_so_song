@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_args.c                                    :+:      :+:    :+:   */
+/*   ft_close_message.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 07:03:23 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 21:43:23 by idavoli-         ###   ########.fr       */
+/*   Created: 2022/01/17 00:36:36 by idavoli-          #+#    #+#             */
+/*   Updated: 2022/01/23 18:50:04 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-void	ft_check_args(int argc, char **argv)
+void	ft_close_message(t_game *game, char *message, int code)
 {
-	int	test_fd;
-
-	if (argc < 2)
-		exit(1);
-	if (argc > 2)
-		exit(1);
-	test_fd = open(argv[1], O_RDONLY);
-	if (test_fd == -1)
-	{
-		printf("can not open file");
-		close(test_fd);
-		exit(1);
-	}
-	close(test_fd);
+	if (code == 0)
+		printf("%s\n", message);
+	else
+		printf("Error\n%s\n", message);
+	ft_close(game);
 }

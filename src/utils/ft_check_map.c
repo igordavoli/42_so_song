@@ -6,11 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 15:36:21 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/26 22:07:43 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 21:45:43 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../so_long.h"
 
 void	ft_check_map(t_game *game)
 {
