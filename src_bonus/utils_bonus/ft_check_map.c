@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_map.c                                       :+:      :+:    :+:   */
+/*   ft_check_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 01:31:16 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/31 21:42:25 by idavoli-         ###   ########.fr       */
+/*   Created: 2022/01/22 15:36:21 by idavoli-          #+#    #+#             */
+/*   Updated: 2022/01/30 21:45:43 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-void	ft_get_map(t_game *game, char *map_path)
+void	ft_check_map(t_game *game)
 {
-	ft_load_map(game, map_path);
-	ft_check_map(game);
+	ft_check_map_lines(game);
+	ft_check_map_chars(game);
+	ft_check_map_walls(game);
+	ft_check_map_items(game);
 }

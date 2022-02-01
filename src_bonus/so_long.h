@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/31 21:40:53 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/31 22:33:42 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@
 # include "../libs/libft/libft.h"
 # include "../libs/mlx/mlx.h"
 # include "so_long_defines.h"
+# include "so_long_defines_bonus.h"
+
+typedef struct s_capy
+{
+	int	x;
+	int	y;
+}	t_capy;
 
 typedef struct s_game
 {
@@ -35,6 +42,11 @@ typedef struct s_game
 	int		moves;
 	int		img_width;
 	int		img_height;
+	void	*capy_lay;
+	void	*capy_front;
+	void	*capy_back;
+	void	*capy_left;
+	void	*capy_right;
 	void	*hero_front;
 	void	*hero_back;
 	void	*hero_left;
@@ -49,6 +61,9 @@ typedef struct s_game
 	int		map_height;
 	int		map_exits;
 	int		map_start;
+	int		n_capys;
+	t_capy	**capys;
+	void	**numbers;
 	int		err_code;
 }	t_game;
 

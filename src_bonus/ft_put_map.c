@@ -6,11 +6,21 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 05:44:16 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/31 21:41:30 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 21:43:23 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	ft_put_capy(t_game *game, int x, int y)
+{
+	mlx_put_image_to_window(game->mlx, game->win, game->capy_lay, x * RES,
+		y * RES);
+	game->n_capys--;
+	game->capys[game->n_capys] = (t_capy *)malloc(sizeof(t_capy));
+	game->capys[game->n_capys]->x = x;
+	game->capys[game->n_capys]->y = y;
+}
 
 void	ft_put_sprite(t_game *game, char c, int x, int y)
 {
@@ -26,6 +36,8 @@ void	ft_put_sprite(t_game *game, char c, int x, int y)
 	if (c == 'E')
 		mlx_put_image_to_window(game->mlx, game->win, game->exit, x * RES,
 			y * RES);
+	if (c == 'A')
+		ft_put_capy(game, x, y);
 	if (c == 'P')
 	{
 		mlx_put_image_to_window(game->mlx, game->win, game->hero_front, x * RES,

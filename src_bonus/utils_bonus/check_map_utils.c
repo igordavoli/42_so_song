@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:18:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/31 21:44:21 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/30 21:45:47 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	ft_check_map_items(t_game *game)
 				game->map_exits++;
 			if (game->map[i][j] == 'P')
 				game->map_start++;
+			if (game->map[i][j] == 'A')
+				game->n_capys++;
 			j++;
 		}
 		i++;
@@ -94,7 +96,7 @@ void	ft_check_map_chars(t_game *game)
 		{
 			if (game->map[i][j] != '1' && game->map[i][j] != '0'
 				&& game->map[i][j] != 'C' && game->map[i][j] != 'E'
-					&& game->map[i][j] != 'P')
+					&& game->map[i][j] != 'P' && game->map[i][j] != 'A')
 				ft_close_message(game, "Invalid character in map", 1);
 			j++;
 		}
