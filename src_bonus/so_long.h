@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/31 22:33:42 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/01/31 23:40:58 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 # include "../libs/gnl/get_next_line.h"
 # include "../libs/libft/libft.h"
-# include "../libs/mlx/mlx.h"
+# include "../libs/minilibx/mlx.h"
 # include "so_long_defines.h"
 # include "so_long_defines_bonus.h"
 

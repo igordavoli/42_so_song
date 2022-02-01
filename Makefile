@@ -8,7 +8,7 @@ MLX_FLAGS = -lXext -lX11
 
 GNL = libs/gnl/get_next_line.a
 LIBFT = libs/libft/libft.a
-MLX = libs/mlx/libmlx.a
+MLX = libs/minilibx/libmlx.a
 
 NAME = so_long.out
 SRC_DIR = src
@@ -63,13 +63,13 @@ all: $(NAME)
 $(NAME): $(OBJ_DIR) $(OBJ) $(HEADER)
 	make -C ./libs/gnl
 	make -C ./libs/libft
-	make -C ./libs/mlx
+	make -C ./libs/minilibx
 	@$(CC) $(CFLAGS) $(OBJ) $(GNL) $(LIBFT) $(MLX) -o $(NAME) $(MLX_FLAGS)
 
 $(NAME_BONUS): $(OBJ_DIR_BONUS) $(OBJ_BONUS) $(HEADER_BONUS)
 	make -C ./libs/gnl
 	make -C ./libs/libft
-	make -C ./libs/mlx
+	make -C ./libs/minilibx
 	@$(CC) $(CFLAGS) $(OBJ_BONUS) $(GNL) $(LIBFT) $(MLX) -o $(NAME_BONUS) $(MLX_FLAGS)
 
 clean:
