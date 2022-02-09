@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map_utils.c                                  :+:      :+:    :+:   */
+/*   check_map_utils_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:18:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 21:45:47 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/08 20:49:12 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 static void	ft_check_items(t_game *game)
 {

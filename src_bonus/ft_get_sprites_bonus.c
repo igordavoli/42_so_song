@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_sprites.c                                   :+:      :+:    :+:   */
+/*   ft_get_sprites_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 23:54:22 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 23:49:48 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/08 20:49:03 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 static void	*ft_get_sprite(t_game *game, char *sprite)
 {

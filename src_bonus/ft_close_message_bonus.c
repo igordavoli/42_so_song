@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_map.c                                     :+:      :+:    :+:   */
+/*   ft_close_message_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/22 15:36:21 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 21:45:43 by idavoli-         ###   ########.fr       */
+/*   Created: 2022/01/17 00:36:36 by idavoli-          #+#    #+#             */
+/*   Updated: 2022/02/08 20:49:03 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long_bonus.h"
 
-void	ft_check_map(t_game *game)
+void	ft_close_message(t_game *game, char *message, int code)
 {
-	ft_check_map_lines(game);
-	ft_check_map_chars(game);
-	ft_check_map_walls(game);
-	ft_check_map_items(game);
+	if (code == 0)
+		printf("%s\n", message);
+	else
+		printf("Error\n%s\n", message);
+	game->err_code = code;
+	ft_close(game);
 }

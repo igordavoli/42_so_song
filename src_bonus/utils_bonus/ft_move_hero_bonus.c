@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_move_hero.c                                     :+:      :+:    :+:   */
+/*   ft_move_hero_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 00:00:20 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 21:46:01 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/08 20:49:21 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 static void	ft_exec_move(t_game *game, int x, int y, void *hero_sprite)
 {

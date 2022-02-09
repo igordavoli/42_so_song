@@ -18,7 +18,7 @@ HEADER = $(SRC_DIR)/so_long.h
 NAME_BONUS = so_long_bonus.out
 SRC_DIR_BONUS = src_bonus
 OBJ_DIR_BONUS = objects_bonus
-HEADER_BONUS = $(SRC_DIR_BONUS)/so_long.h
+HEADER_BONUS = $(SRC_DIR_BONUS)/so_long_bonus.h
 
 SRC_FILES = so_long.c\
 	ft_get_sprites.c\
@@ -33,18 +33,18 @@ SRC_FILES = so_long.c\
 	utils/check_map_utils.c\
 	utils/ft_check_map.c
 
-SRC_FILES_BONUS = so_long.c\
-	ft_get_sprites.c\
-	ft_key_handler.c\
-	ft_close.c\
-	ft_close_message.c\
-	ft_get_map.c\
-	ft_put_map.c\
-	ft_check_args.c\
-	utils_bonus/ft_move_hero.c\
-	utils_bonus/ft_load_map.c\
-	utils_bonus/check_map_utils.c\
-	utils_bonus/ft_check_map.c
+SRC_FILES_BONUS = so_long_bonus.c\
+	ft_get_sprites_bonus.c\
+	ft_key_handler_bonus.c\
+	ft_close_bonus.c\
+	ft_close_message_bonus.c\
+	ft_get_map_bonus.c\
+	ft_put_map_bonus.c\
+	ft_check_args_bonus.c\
+	utils_bonus/ft_move_hero_bonus.c\
+	utils_bonus/ft_load_map_bonus.c\
+	utils_bonus/check_map_utils_bonus.c\
+	utils_bonus/ft_check_map_bonus.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
@@ -100,8 +100,6 @@ reb:
 $(OBJ_DIR):
 	mkdir objects
 	mkdir objects/utils
-
-
 
 bonus: $(NAME_BONUS)
 
