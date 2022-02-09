@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:28:55 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/30 23:45:56 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/08 21:04:35 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 # define SO_LONG_DEFINES_H
 
 # ifndef H_FRONT_XPM
-#  define H_FRONT_XPM "assets/h_front.xpm"
+#  define H_FRONT_XPM "assets/hero/h_front.xpm"
 # endif
 
 # ifndef H_BACK_XPM
-#  define H_BACK_XPM "assets/h_back.xpm"
+#  define H_BACK_XPM "assets/hero/h_back.xpm"
 # endif
 
 # ifndef H_LEFT
-#  define H_LEFT_XPM "assets/h_left.xpm"
+#  define H_LEFT_XPM "assets/hero/h_left.xpm"
 # endif
 
 # ifndef H_RIGHT_XPM
-#  define H_RIGHT_XPM "assets/h_right.xpm"
+#  define H_RIGHT_XPM "assets/hero/h_right.xpm"
 # endif
 
 # ifndef GRASS_XPM
