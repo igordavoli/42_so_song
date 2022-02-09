@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:15:00 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/08 20:49:03 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/08 21:12:41 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	game_init(t_game *game, char *map_arg)
 	game->map_start = 0;
 	game->img_height = 0;
 	game->img_width = 0;
-    game->err_code = 0;
+	game->err_code = 0;
 	game->map = NULL;
 	ft_get_map(game, map_arg);
 	game->mlx = mlx_init();
