@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/08 21:12:21 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/10 01:06:05 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 
 typedef struct s_capy
 {
-	int	x;
-	int	y;
+	int		x;
+	int		y;
 }	t_capy;
 
 typedef struct s_game
@@ -41,6 +41,7 @@ typedef struct s_game
 	int		moves;
 	int		img_width;
 	int		img_height;
+	void	**capy_wake;
 	void	*capy_lay;
 	void	*capy_front;
 	void	*capy_back;

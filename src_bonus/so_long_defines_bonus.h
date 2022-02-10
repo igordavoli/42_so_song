@@ -6,12 +6,28 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:28:55 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/08 21:03:27 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/10 01:27:57 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_DEFINES_BONUS_H
 # define SO_LONG_DEFINES_BONUS_H
+
+# ifndef CAPY_WAKE_1
+#  define CAPY_WAKE_1 "assets/capy/capy_wake_1.xpm"
+# endif
+
+# ifndef CAPY_WAKE_2
+#  define CAPY_WAKE_2 "assets/capy/capy_wake_2.xpm"
+# endif
+
+# ifndef CAPY_WAKE_3
+#  define CAPY_WAKE_3 "assets/capy/capy_wake_3.xpm"
+# endif
+
+# ifndef CAPY_WAKE_4
+#  define CAPY_WAKE_4 "assets/capy/capy_wake_4.xpm"
+# endif
 
 # ifndef CAPY_LAY_XPM
 #  define CAPY_LAY_XPM "assets/capy/capy_lay.xpm"
@@ -135,6 +151,14 @@
 
 # ifndef RES
 #  define RES 32
+# endif
+
+# ifndef LOOPS
+#  define LOOPS 4000
+# endif
+
+# ifndef FRAME
+#  define FRAME 1000
 # endif
 
 #endif
