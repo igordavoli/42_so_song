@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:36:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/10 01:40:18 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/15 00:06:45 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ static void	ft_destroy_images_list(void *mlx, void **numbers)
 static void	ft_destroy_images(t_game *game)
 {
 	ft_destroy_images_list(game->mlx, game->numbers);
-	ft_destroy_images_list(game->mlx, game->capy_wake);
 	mlx_destroy_image(game->mlx, game->capy_lay);
 	mlx_destroy_image(game->mlx, game->capy_front);
 	mlx_destroy_image(game->mlx, game->capy_back);

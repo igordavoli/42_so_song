@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 23:54:22 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/10 01:35:51 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/15 00:06:18 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,6 @@ static void	ft_load_capy_sprites(t_game *game)
 	game->capy_back = ft_get_sprite(game, CAPY_BACK_XPM);
 	game->capy_left = ft_get_sprite(game, CAPY_LEFT_XPM);
 	game->capy_right = ft_get_sprite(game, CAPY_RIGHT_XPM);
-	game->capy_wake = (void **)malloc(sizeof(void *) * 5);
-	game->capy_wake[0] = ft_get_sprite(game, CAPY_WAKE_1);
-	game->capy_wake[1] = ft_get_sprite(game, CAPY_WAKE_2);
-	game->capy_wake[2] = ft_get_sprite(game, CAPY_WAKE_3);
-	game->capy_wake[3] = ft_get_sprite(game, CAPY_WAKE_4);
-	game->capy_wake[4] = NULL;
 }
 
 static void	ft_load_hero_sprites(t_game *game)
