@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:18:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/01/31 21:44:21 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/16 12:48:16 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	ft_check_items(t_game *game)
 	if (!game->map_exits)
 		ft_close_message(game, "not exits found!", 1);
 	if (game->map_start != 1)
-		ft_close_message(game, "must exist just a map exit!", 1);
+		ft_close_message(game, "must exist just a map start!", 1);
 }
 
 void	ft_check_map_items(t_game *game)
@@ -36,7 +36,7 @@ void	ft_check_map_items(t_game *game)
 			if (game->map[i][j] == 'C')
 				game->map_c++;
 			if (game->map[i][j] == 'E')
-				game->map_exits++;
+				game->map_exits = 1;
 			if (game->map[i][j] == 'P')
 				game->map_start++;
 			j++;

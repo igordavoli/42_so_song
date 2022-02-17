@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:28:55 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/15 00:05:37 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/16 20:32:51 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,10 @@
 
 # ifndef KEY_EVENT
 #  define KEY_EVENT 2
+# endif
+
+# ifndef FOCUS_IN
+#  define FOCUS_IN 9
 # endif
 
 # ifndef ESC_KEY

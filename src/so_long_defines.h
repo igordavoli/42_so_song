@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:28:55 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/08 21:04:35 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/16 12:50:36 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@
 
 # ifndef CLOSE_WIN_EVENT
 #  define CLOSE_WIN_EVENT 17
+# endif
+
+# ifndef FOCUS_IN
+#  define FOCUS_IN 9
 # endif
 
 # ifndef KEY_EVENT

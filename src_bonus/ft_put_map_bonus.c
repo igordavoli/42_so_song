@@ -6,21 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 05:44:16 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/08 20:49:03 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/17 01:28:57 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-
-static void	ft_put_capy(t_game *game, int x, int y)
-{
-	mlx_put_image_to_window(game->mlx, game->win, game->capy_lay, x * RES,
-		y * RES);
-	game->n_capys--;
-	game->capys[game->n_capys] = (t_capy *)malloc(sizeof(t_capy));
-	game->capys[game->n_capys]->x = x;
-	game->capys[game->n_capys]->y = y;
-}
 
 void	ft_put_sprite(t_game *game, char c, int x, int y)
 {
@@ -36,22 +26,23 @@ void	ft_put_sprite(t_game *game, char c, int x, int y)
 	if (c == 'E')
 		mlx_put_image_to_window(game->mlx, game->win, game->exit, x * RES,
 			y * RES);
-	if (c == 'A')
-		ft_put_capy(game, x, y);
 	if (c == 'P')
 	{
-		mlx_put_image_to_window(game->mlx, game->win, game->hero_front, x * RES,
+		mlx_put_image_to_window(game->mlx, game->win, game->h_curr_sprite, x * RES,
 			y * RES);
 		game->hero_x = x;
 		game->hero_y = y;
 	}
 }
 
-void	ft_put_map(t_game *game)
+int	ft_put_map(void *_game)
 {
 	int		i;
 	int		j;
+	int		n;
 
+	t_game	*game;
+	game = (t_game *)_game;
 	i = 0;
 	while (game->map[i])
 	{
@@ -63,4 +54,16 @@ void	ft_put_map(t_game *game)
 		}
 		i++;
 	}
+	n = 0;
+	while (game->capys[n])
+	{
+		printf("x: %d\n",  game->capys[n]->x);
+		printf("y: %d\n",  game->capys[n]->y);
+		printf("c: %p\n", game->capys[n]->curr_sprite);
+		mlx_put_image_to_window(game->mlx, game->win,
+			game->capy_left, game->capys[n]->x * RES,
+			game->capys[n]->y * RES);
+		n++;
+	}
+	return (0);
 }

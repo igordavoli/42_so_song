@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:15:00 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/15 00:06:34 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/16 21:41:46 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ static int	ft_update(void *_game)
 			&& game->capys[i]->x - game->hero_x > -5
 			&& game->capys[i]->y - game->hero_y < 5
 			&& game->capys[i]->y - game->hero_y > -5)
+		{
+			game->capys[i]->curr_sprite = game->capy_left;
 			mlx_put_image_to_window(game->mlx, game->win, game->capy_left,
 				game->capys[i]->x * RES, game->capys[i]->y * RES);
+		}
 		i++;
 	}
 	return (0);
@@ -48,6 +51,7 @@ void	game_init(t_game *game, char *map_arg)
 	ft_get_map(game, map_arg);
 	game->mlx = mlx_init();
 	ft_get_sprites(game);
+	game->h_curr_sprite = game->hero_front;
 	game->win = mlx_new_window(game->mlx, game->map_width * RES,
 			game->map_height * RES, "so_long");
 	ft_put_map(game);
@@ -62,5 +66,6 @@ int	main(int argc, char **argv)
 	mlx_hook(game.win, CLOSE_WIN_EVENT, 1, &ft_close, &game);
 	mlx_hook(game.win, KEY_EVENT, 1, &key_handler, &game);
 	mlx_loop_hook(game.mlx, &ft_update, &game);
+	mlx_hook(game.win, FOCUS_IN, 1L<<21, &ft_put_map, &game);
 	mlx_loop(game.mlx);
 }
