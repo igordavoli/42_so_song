@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:15:00 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/16 20:23:01 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/16 23:20:16 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ int	main(int argc, char **argv)
 	game_init(&game, argv[1]);
 	mlx_hook(game.win, CLOSE_WIN_EVENT, 1, &ft_close, &game);
 	mlx_hook(game.win, KEY_EVENT, 1, &key_handler, &game);
-	mlx_hook(game.win, FOCUS_IN, 1L<<21, &ft_put_map, &game);
+	mlx_hook(game.win, FOCUS_IN, 1L << 21, &ft_put_map, &game);
 	mlx_loop(game.mlx);
 }

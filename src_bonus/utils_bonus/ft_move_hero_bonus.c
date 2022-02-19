@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 00:00:20 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/16 20:34:02 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/19 00:03:07 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	ft_collect(t_game *game, int x, int y)
 	game->map_c--;
 }
 
-void	ft_put_moves_win(t_game *game, int n)
+static void	ft_put_moves_win(t_game *game, int n)
 {
 	char	*str;
 	int		i;
@@ -63,7 +63,6 @@ int	ft_move_hero(t_game *game, int x, int y, void *hero_sprite)
 	if (game->map[game->hero_y + y][game->hero_x + x] == 'C')
 		ft_collect(game, x, y);
 	ft_exec_move(game, x, y, hero_sprite);
-	printf("%d\n", ++game->moves);
-	ft_put_moves_win(game, game->moves);
+	ft_put_moves_win(game, ++game->moves);
 	return (0);
 }

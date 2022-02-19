@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 05:44:16 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/16 20:28:33 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/16 23:20:33 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	ft_put_sprite(t_game *game, char c, int x, int y)
 			y * RES);
 	if (c == 'P')
 	{
-		mlx_put_image_to_window(game->mlx, game->win, game->h_curr_sprite, x * RES,
-			y * RES);
+		mlx_put_image_to_window(game->mlx, game->win, game->h_curr_sprite,
+			x * RES, y * RES);
 		game->hero_x = x;
 		game->hero_y = y;
 	}

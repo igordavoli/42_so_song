@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:18:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/16 21:05:35 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/19 00:17:55 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ft_check_map_lines(t_game *game)
 	while (game->map[i])
 	{
 		if ((int)ft_strlen(game->map[i++]) != game->map_width)
-			ft_close_message(game, "map is not a retangle", 1);
+			ft_close_message(game, "map is not a rectangle", 1);
 	}
 }
 
