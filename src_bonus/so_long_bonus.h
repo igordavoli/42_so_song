@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/19 05:13:41 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/19 17:54:25 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 # define SO_LONG_BONUS_H
 
 # include <stdlib.h>
-# include <stdio.h>
 
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-
 # include "../libs/gnl/get_next_line.h"
 # include "../libs/libft/libft.h"
 # include "../libs/minilibx/mlx.h"

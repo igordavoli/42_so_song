@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:15:00 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/16 23:21:25 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/19 17:53:20 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@ static int	ft_update(void *_game)
 		}
 		i++;
 	}
+	ft_put_map((void *)game);
 	return (0);
 }
 
-void	game_init(t_game *game, char *map_arg)
+static void	game_init(t_game *game, char *map_arg)
 {
 	game->map = NULL;
 	game->moves = 0;

@@ -6,13 +6,13 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:15:00 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/16 23:20:16 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/19 17:53:11 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	game_init(t_game *game, char *map_arg)
+static void	game_init(t_game *game, char *map_arg)
 {
 	game->map = NULL;
 	game->moves = 0;
@@ -33,6 +33,15 @@ void	game_init(t_game *game, char *map_arg)
 	ft_put_map(game);
 }
 
+static int	ft_update(void *_game)
+{
+	t_game	*game;
+
+	game = (t_game *)_game;
+	ft_put_map((void *)game);
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_game	game;
@@ -42,5 +51,6 @@ int	main(int argc, char **argv)
 	mlx_hook(game.win, CLOSE_WIN_EVENT, 1, &ft_close, &game);
 	mlx_hook(game.win, KEY_EVENT, 1, &key_handler, &game);
 	mlx_hook(game.win, FOCUS_IN, 1L << 21, &ft_put_map, &game);
+	mlx_loop_hook(game.mlx, &ft_update, &game);
 	mlx_loop(game.mlx);
 }
