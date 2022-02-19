@@ -9,6 +9,7 @@ MLX_FLAGS = -lXext -lX11
 GNL = libs/gnl/get_next_line.a
 LIBFT = libs/libft/libft.a
 MLX = libs/minilibx/libmlx.a
+FT_PRINTF = libs/ft_printf/libftprintf.a
 
 NAME = so_long.out
 SRC_DIR = src
@@ -64,13 +65,15 @@ $(NAME): $(OBJ_DIR) $(OBJ) $(HEADER)
 	make -C ./libs/gnl
 	make -C ./libs/libft
 	make -C ./libs/minilibx
-	@$(CC) $(CFLAGS) $(OBJ) $(GNL) $(LIBFT) $(MLX) -o $(NAME) $(MLX_FLAGS)
+	make -C ./libs/ft_printf
+	@$(CC) $(CFLAGS) $(OBJ) $(GNL) $(LIBFT) $(MLX) $(FT_PRINTF) -o $(NAME) $(MLX_FLAGS)
 
 $(NAME_BONUS): $(OBJ_DIR_BONUS) $(OBJ_BONUS) $(HEADER_BONUS)
 	make -C ./libs/gnl
 	make -C ./libs/libft
 	make -C ./libs/minilibx
-	@$(CC) $(CFLAGS) $(OBJ_BONUS) $(GNL) $(LIBFT) $(MLX) -o $(NAME_BONUS) $(MLX_FLAGS)
+	make -C ./libs/ft_printf
+	@$(CC) $(CFLAGS) $(OBJ_BONUS) $(GNL) $(LIBFT) $(MLX) $(FT_PRINTF) -o $(NAME_BONUS) $(MLX_FLAGS)
 
 clean:
 	rm -rf objects*

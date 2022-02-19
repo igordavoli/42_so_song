@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_args.c                                    :+:      :+:    :+:   */
+/*   ft_resolve_chr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 07:03:23 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/19 05:31:04 by idavoli-         ###   ########.fr       */
+/*   Created: 2021/10/11 04:36:29 by idavoli-          #+#    #+#             */
+/*   Updated: 2021/10/29 09:57:52 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-void	ft_check_args(int argc, char **argv)
+static int	ft_put_space_chr(int n_spaces)
 {
-	int	test_fd;
+	while (n_spaces)
+	{
+		ft_putchar_fd(' ', 1);
+		n_spaces--;
+	}
+	return (0);
+}
 
-	if (argc < 2)
+int	ft_resolve_chr(char c, t_flags flags)
+{
+	int	len;
+
+	len = 1;
+	if (flags.f_width)
 	{
-		ft_printf("Error\nno argument\n");
-		exit(1);
+		ft_put_space_chr(flags.f_width - 1);
+		len += (flags.f_width - 1);
 	}
-	if (argc > 2)
+	ft_putchar_fd(c, 1);
+	if (flags.f_minus)
 	{
-		ft_printf("Error\nmore then a argument\n");
-		exit(1);
+		ft_put_space_chr(flags.f_minus - 1);
+		len += (flags.f_minus - 1);
 	}
-	test_fd = open(argv[1], O_RDONLY);
-	if (test_fd == -1)
-	{
-		perror("can not open file");
-		close(test_fd);
-		exit(1);
-	}
-	close(test_fd);
+	return (len);
 }

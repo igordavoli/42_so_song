@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/16 23:22:02 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/19 05:13:41 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include "../libs/gnl/get_next_line.h"
 # include "../libs/libft/libft.h"
 # include "../libs/minilibx/mlx.h"
+# include "../libs/ft_printf/ft_printf.h"
 # include "so_long_defines_bonus.h"
 
 typedef struct s_capy

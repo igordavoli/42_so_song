@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:03:23 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/08 20:49:03 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/19 05:11:08 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	ft_check_args(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		printf("Error\nno argument\n");
+		ft_printf("Error\nno argument\n");
 		exit(1);
 	}
 	if (argc > 2)
 	{
-		printf("Error\nmore then a argument\n");
+		ft_printf("Error\nmore then a argument\n");
 		exit(1);
 	}
 	test_fd = open(argv[1], O_RDONLY);
