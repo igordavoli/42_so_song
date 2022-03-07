@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 00:00:20 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/19 00:03:07 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/19 18:17:51 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,6 @@ static void	ft_collect(t_game *game, int x, int y)
 	game->map_c--;
 }
 
-static void	ft_put_moves_win(t_game *game, int n)
-{
-	char	*str;
-	int		i;
-
-	str = ft_itoa(n);
-	i = 0;
-	while (str[i])
-	{
-		mlx_put_image_to_window(game->mlx, game->win,
-			game->numbers[str[i] - '0'], i * 9, 0);
-		i++;
-	}
-	free(str);
-}
-
 int	ft_move_hero(t_game *game, int x, int y, void *hero_sprite)
 {
 	mlx_put_image_to_window(game->mlx, game->win, hero_sprite,
@@ -63,6 +47,6 @@ int	ft_move_hero(t_game *game, int x, int y, void *hero_sprite)
 	if (game->map[game->hero_y + y][game->hero_x + x] == 'C')
 		ft_collect(game, x, y);
 	ft_exec_move(game, x, y, hero_sprite);
-	ft_put_moves_win(game, ++game->moves);
+	game->moves++;
 	return (0);
 }

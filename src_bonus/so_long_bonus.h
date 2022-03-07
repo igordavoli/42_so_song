@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 05:16:59 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/19 17:54:25 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/19 18:30:02 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+# include <stdio.h>
 # include "../libs/gnl/get_next_line.h"
 # include "../libs/libft/libft.h"
 # include "../libs/minilibx/mlx.h"
@@ -81,5 +82,6 @@ int		key_handler(int keycode, void *game);
 int		ft_move_hero(t_game *game, int x, int y, void *hero_sprite);
 void	ft_close_message(t_game *game, char *message, int code);
 int		ft_close(void *_game);
+void	ft_put_moves_win(t_game *game, int n);
 
 #endif

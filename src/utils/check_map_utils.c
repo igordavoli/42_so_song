@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 23:18:36 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/19 00:17:17 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/19 18:05:52 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_check_map_items(t_game *game)
 			if (game->map[i][j] == 'C')
 				game->map_c++;
 			if (game->map[i][j] == 'E')
-				game->map_exits = 1;
+				game->map_exits++;
 			if (game->map[i][j] == 'P')
 				game->map_start++;
 			j++;

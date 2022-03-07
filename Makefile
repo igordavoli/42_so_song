@@ -1,6 +1,6 @@
 .PHONY: all clean fclean re
 
-CC = gcc
+CC = clang
 
 CFLAGS = -g3 -Wall -Wextra -Werror
 
@@ -11,12 +11,12 @@ LIBFT = libs/libft/libft.a
 MLX = libs/minilibx/libmlx.a
 FT_PRINTF = libs/ft_printf/libftprintf.a
 
-NAME = so_long.out
+NAME = so_long
 SRC_DIR = src
 OBJ_DIR = objects
 HEADER = $(SRC_DIR)/so_long.h
 
-NAME_BONUS = so_long_bonus.out
+NAME_BONUS = so_long_bonus
 SRC_DIR_BONUS = src_bonus
 OBJ_DIR_BONUS = objects_bonus
 HEADER_BONUS = $(SRC_DIR_BONUS)/so_long_bonus.h
@@ -45,7 +45,8 @@ SRC_FILES_BONUS = so_long_bonus.c\
 	utils_bonus/ft_move_hero_bonus.c\
 	utils_bonus/ft_load_map_bonus.c\
 	utils_bonus/check_map_utils_bonus.c\
-	utils_bonus/ft_check_map_bonus.c
+	utils_bonus/ft_check_map_bonus.c\
+	utils_bonus/ft_put_moves_win.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
@@ -66,21 +67,22 @@ $(NAME): $(OBJ_DIR) $(OBJ) $(HEADER)
 	make -C ./libs/libft
 	make -C ./libs/minilibx
 	make -C ./libs/ft_printf
-	@$(CC) $(CFLAGS) $(OBJ) $(GNL) $(LIBFT) $(MLX) $(FT_PRINTF) -o $(NAME) $(MLX_FLAGS)
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(MLX) $(MLX_FLAGS) $(GNL) $(FT_PRINTF) $(LIBFT)
 
 $(NAME_BONUS): $(OBJ_DIR_BONUS) $(OBJ_BONUS) $(HEADER_BONUS)
 	make -C ./libs/gnl
 	make -C ./libs/libft
 	make -C ./libs/minilibx
 	make -C ./libs/ft_printf
-	@$(CC) $(CFLAGS) $(OBJ_BONUS) $(GNL) $(LIBFT) $(MLX) $(FT_PRINTF) -o $(NAME_BONUS) $(MLX_FLAGS)
+	@$(CC) $(CFLAGS) $(OBJ_BONUS) -o $(NAME_BONUS) $(MLX) $(MLX_FLAGS) $(GNL) $(FT_PRINTF) $(LIBFT)
 
 clean:
 	rm -rf objects*
 
 fclean:
 	make  clean
-	find -name '*.out' -delete
+	find -name '$(NAME)' -delete
+	find -name '$(NAME_BONUS)' -delete
 
 re:
 	@make fclean && make all

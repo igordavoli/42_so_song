@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 05:44:16 by idavoli-          #+#    #+#             */
-/*   Updated: 2022/02/16 23:30:01 by idavoli-         ###   ########.fr       */
+/*   Updated: 2022/02/19 18:28:25 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ int	ft_put_map(void *_game)
 		j = 0;
 		while (game->map[i][j])
 		{
+			if (i == 1 && j == 3)
+				ft_put_moves_win(game, game->moves);
 			ft_put_sprite(game, game->map[i][j], j, i);
 			j++;
 		}

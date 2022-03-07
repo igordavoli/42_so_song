@@ -6,11 +6,9 @@
 #    By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/24 20:47:53 by vaferrei          #+#    #+#              #
-#    Updated: 2022/02/19 05:42:18 by idavoli-         ###   ########.fr        #
+#    Updated: 2022/02/20 01:33:45 by idavoli-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-LIBFT = ../libft/libft.a
 
 NAME = libftprintf.a
 
@@ -31,8 +29,8 @@ CC = clang
 
 CFLAGS = -Wall -Wextra -Werror
 
-${NAME}: ${OBJS} ${LIBFT}
-	@ar -rcs ${NAME} ${OBJS} ${LIBFT}
+${NAME}: ${OBJS}
+	@ar -rcs ${NAME} ${OBJS}
 
 all: ${NAME}
 
@@ -40,21 +38,15 @@ re: fclean all
 
 bonus: all
 
-test: all
-	@${CC} -g main.c libftprintf.a libft/libft.a
-	@make clean
-
 test_run : test
 	@./a.out
 	@make fclean
 
 clean:
-	@make clean -C ./libft
 	@rm -f ${OBJS}
 	@rm -f ${BOBJS}
 
 fclean: clean
-	@make fclean -C ./libft
 	@rm -f ${NAME}
 	@rm a.out
 
