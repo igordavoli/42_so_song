@@ -3,7 +3,7 @@
 
 <div align="center">
   <img  src="https://game.42sp.org.br/static/assets/achievements/so_longm.png" />
-  <h1>ft_printf</h1>
+  <h1>so_long</h1>
 </div>
 
 ## :sparkles: What's Get so_long project of 42?
