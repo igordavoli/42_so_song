@@ -6,6 +6,6 @@
   <h1>so_long</h1>
 </div>
 
-## :sparkles: What's Get so_long project of 42?
+## :sparkles: What's so_long project of 42?
 
 Is a simple 2D game build in C language.
