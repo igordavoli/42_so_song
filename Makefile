@@ -9,6 +9,7 @@ MLX_FLAGS = -lXext -lX11
 GNL = libs/gnl/get_next_line.a
 LIBFT = libs/libft/libft.a
 MLX = libs/minilibx/libmlx.a
+MLX_REPO = https://github.com/42Paris/minilibx-linux.git
 
 NAME = so_long.out
 SRC_DIR = src
@@ -61,9 +62,7 @@ $(OBJ_DIR_BONUS)/%.o: $(SRC_DIR_BONUS)/%.c
 all: $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJ) $(HEADER)
-	make -C ./libs/gnl
-	make -C ./libs/libft
-	make -C ./libs/minilibx
+
 	@$(CC) $(CFLAGS) $(OBJ) $(GNL) $(LIBFT) $(MLX) -o $(NAME) $(MLX_FLAGS)
 
 $(NAME_BONUS): $(OBJ_DIR_BONUS) $(OBJ_BONUS) $(HEADER_BONUS)
@@ -83,9 +82,13 @@ re:
 	@make fclean && make all
 
 install:
-	apt install x11-apps
-	apt install libxext-dev
-	apt install libbsd-dev
+	sudo apt install x11-apps -y
+	sudo apt install libxext-dev -y
+	sudo apt install libbsd-dev -y
+	git clone $(MLX_REPO) libs/minilibx
+	make -C ./libs/gnl
+	make -C ./libs/libft
+	make -C ./libs/minilibx
 
 play: all
 	./$(NAME) maps/map.ber
